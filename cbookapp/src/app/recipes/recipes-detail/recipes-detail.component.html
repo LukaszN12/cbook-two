@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-md-12">
+    <h4 >{{ recipe.name }} </h4>
+    <hr>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+
+      <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle mb-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Zarządzaj przepisem
+        </button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+          <a  style="cursor: pointer" class="dropdown-item"  (click)="onAddToShoppingList()">Dodaj do listy zakupów</a>
+          <a style="cursor: pointer" class="dropdown-item" (click)="onEditRecipe()" >Edytuj przepis</a>
+          <a style="cursor: pointer" class="dropdown-item" (click)="onDeleteRecipe()" >Usuń przepis </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    {{ recipe.description }}
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <div class="list-group">
+      <div class="list-group-item" *ngFor="let ingredient of recipe.ingredients" >
+        {{ ingredient.name }}  {{ ingredient.amount }}  {{ ingredient.unit }}
+
+      </div>
+    </div>
+  </div>
+</div>

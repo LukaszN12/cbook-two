@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-md-12">
+    <form (ngSubmit)=" onAddValue(f)" #f="ngForm" >
+      <div class="form-group row">
+        <div class="col-md-5">
+          <label for="ingredientName">Nazwa Składnika</label>
+          <input
+            type="text"
+            class="form-control"
+            id="ingredientName"
+            placeholder=""
+            name="name"
+            ngModel
+            required
+          >
+        </div>
+        <div class="col-md-3">
+          <label for="ingredientAmount">Ilość</label>
+          <input
+            type="number"
+            class="form-control"
+            id="ingredientAmount"
+            placeholder=""
+            name="amount"
+            ngModel
+            required
+            pattern="^[1-9]+[0-9]*$"
+          >
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="ingredientUnit">Jednostka</label>
+            <select class="form-control"
+                    id="ingredientUnit"
+                    name="unit"
+                    ngModel
+                    required>
+              <option>kg</option>
+              <option>litry</option>
+              <option>szt.</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-secondary" [disabled]="!f.valid" > {{ editMode ? 'Aktualizuj' : 'Dodaj do listy' }}</button>
+      <button type="button" class="btn btn-secondary" (click)="onDelete()" *ngIf="editMode" >Usuń</button>
+      <button type="button" class="btn btn-secondary" (click)="onClear()">Wyczyść</button>
+    </form>
+  </div>
+</div>

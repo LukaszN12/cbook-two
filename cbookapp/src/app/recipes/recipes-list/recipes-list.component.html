@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-mg-12">
+    <button class="btn btn-secondary  ml-3 mt-3" (click)="onNewRecipe()" >Dodaj przepis</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <h4>Wybierz przepis:</h4>
+    <div class="list-group">
+      <a style="cursor: pointer" class="list-group-item list-group-item-action"
+         *ngFor="let recipe of recipes, let i = index"
+         [routerLink]="[i]">
+       {{ i+1 }}.     {{ recipe.name }}
+      </a>
+    </div>
+  </div>
+</div>
+
+
