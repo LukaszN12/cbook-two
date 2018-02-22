@@ -65,4 +65,17 @@ public class Recipe {
                 ", description='" + description + '\'' +
                 '}';
     }
+
+    // do usuniecia <---------------------------------------
+   public class  message{
+        String message;
+
+        public message(String message) {
+            this.message = message;
+        }
+
+        public void setMessage(String message) {
+            this.message = message;
+        }
+    }
 }
